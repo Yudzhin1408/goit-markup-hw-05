@@ -476,7 +476,7 @@ body {
 }
 
 /* ----------------------модельне окно------------------- */
-.bsckdrop {
+.backdrop {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
@@ -484,12 +484,11 @@ body {
   top: 0;
   transition: opacity var(--time) var(--cubic-bezier), visibility var(--time) var(--cubic-bezier);
 }
-/* .backdrop .is-hidden .modal {
-  transform: scale(1.5) rotate(180deg) translate(-1000px);
-  transition: transform 1000ms;
-} */
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
 
-.nodal {
+.modal {
   width: 528px;
   min-height: 581px;
   background-color: #ffffff;
@@ -499,9 +498,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: scale(1) rotate(0);
-  transform: translate(-50%, -50%);
-  /* transition: transform 1000ms; */
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1000ms linear;
+  opacity: 1;
 }
 
 .modal-close {
